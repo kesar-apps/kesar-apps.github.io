@@ -122,7 +122,7 @@
         </span>
         <h1>Privacy Policy</h1>
         <p class="sub">Your game data stays on your device. Ads are served by Google AdMob; app-usage statistics by Google Analytics for Firebase.</p>
-        <span class="updated">Last updated: 2 August 2026</span>
+        <span class="updated">Last updated: 20 October 2026</span>
       </header>
 
       <main>
@@ -130,18 +130,18 @@
         <p>By installing or using Ludo SudoX, you agree to this Privacy Policy.</p>
 
         <div class="note">
-          <strong>In short:</strong> Ludo SudoX has no accounts and no servers of our own, and everything the game itself saves stays on your device. The two exceptions are advertising and usage statistics: the App shows ads through <strong>Google AdMob</strong> (banner ads, optional rewarded videos, and occasional full-screen ads between matches) and uses <strong>Google Analytics for Firebase</strong> to understand how the game is used. Both are Google services that collect limited data (such as your advertising ID) — see Section 5.
+          <strong>In short:</strong> Ludo SudoX has no accounts and no servers of our own, and everything the game itself saves stays on your device. The exceptions are three Google services: the App shows ads through <strong>Google AdMob</strong> (banner ads, optional rewarded videos, and occasional full-screen ads between matches), uses <strong>Google Analytics for Firebase</strong> to understand how the game is used, and checks <strong>Firebase Remote Config</strong> for feature settings. These collect limited data (AdMob uses your advertising ID; Analytics does not) — see Section 5. If you tell us you are under 13, ads are child-directed and analytics is switched off — see Section 7.
         </div>
 
         <h2><span class="n">1.</span>Information We Collect</h2>
-        <p><strong>We do not run any servers of our own and do not collect personal data about you directly.</strong> Ludo SudoX has no backend, no accounts, and no sign-in. The only data that leaves your device is collected by two Google services — <strong>Google AdMob</strong> (which shows ads) and <strong>Google Analytics for Firebase</strong> (which measures app usage) — described in <strong>Section 5</strong>.</p>
+        <p><strong>We do not run any servers of our own and do not collect personal data about you directly.</strong> Ludo SudoX has no backend, no accounts, and no sign-in. The only data that leaves your device is collected by Google services — <strong>Google AdMob</strong> (which shows ads), <strong>Google Analytics for Firebase</strong> (which measures app usage), and <strong>Firebase Remote Config</strong> (which delivers feature settings) — described in <strong>Section 5</strong>.</p>
         <p>The App's own code does <strong>not</strong> access, collect, or transmit:</p>
         <ul>
           <li>Your name, email address, phone number, or contacts</li>
           <li>Your precise location</li>
           <li>Your photos, camera, or microphone</li>
         </ul>
-        <p>The Google AdMob and Firebase Analytics SDKs do, however, collect certain identifiers, ad-interaction data, and app-usage data — including your advertising ID — as described in <strong>Section 5</strong>.</p>
+        <p>The Google SDKs do, however, collect certain identifiers, ad-interaction data, and app-usage data — including, for AdMob, your advertising ID — as described in <strong>Section 5</strong>.</p>
 
         <h2><span class="n">2.</span>Information Stored Locally on Your Device</h2>
         <p>To make the game work, Ludo SudoX saves certain information <strong>only on your device</strong>, using your device's local app storage. This data <strong>never leaves your device</strong> and is <strong>never sent to us or anyone else</strong>. It includes:</p>
@@ -151,7 +151,7 @@
           <li>Your settings (sound, music, haptics, notification, and language preferences)</li>
           <li>Play statistics (e.g. play time, win record) shown on the in-app Stats screen</li>
           <li>Onboarding completion status</li>
-          <li>The month and year of birth you enter when the App asks, used only to decide what kind of advertising you are shown (see <strong>Section 7</strong>)</li>
+          <li>The month and year of birth you enter when the App asks, used only to decide what kind of advertising you are shown and whether usage statistics are collected (see <strong>Section 7</strong>)</li>
         </ul>
         <p>This information is removed when you clear the App's data or uninstall the App (see <strong>Section 6</strong>).</p>
 
@@ -161,6 +161,8 @@
           <li><strong>Notifications</strong> (<code>POST_NOTIFICATIONS</code>) — to show local reminders you can enable or disable, such as your daily-reward streak nudge. All reminders are scheduled and shown by your own device. No notification is sent from any server.</li>
           <li><strong>Run at startup</strong> (<code>RECEIVE_BOOT_COMPLETED</code>) — to re-schedule those local reminders after your device restarts, so an enabled reminder is not lost on reboot.</li>
           <li><strong>Vibration</strong> (<code>VIBRATE</code>) — to provide haptic feedback during gameplay.</li>
+          <li><strong>Internet and network state</strong> (<code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code>) — added by Google's SDKs so ads, analytics and Remote Config can reach Google. The game itself plays fully offline.</li>
+          <li><strong>Advertising ID</strong> (<code>AD_ID</code>) — added by the Google Mobile Ads SDK so AdMob can read your advertising ID (see Section 5).</li>
         </ul>
         <p>You can disable notifications at any time from the App's Settings or your device settings.</p>
 
@@ -178,9 +180,10 @@
         <h2><span class="n">5.</span>Advertising &amp; App-Usage Analytics (Google)</h2>
         <p>Ludo SudoX displays ads through <strong>Google AdMob</strong>: <strong>banner</strong> ads on the home, game, result, and continue screens, <strong>rewarded video ads</strong> you can choose to watch (to earn in-game coins, an extra power-up use, or a head start), and an occasional <strong>full-screen interstitial ad</strong> shown between matches — when a game begins, or when you leave the result screen at the end of one. Rewarded ads are never forced — the game is fully playable without watching any.</p>
         <p>To serve and measure these ads, Google's Mobile Ads SDK collects and shares certain data with Google and its advertising partners, including your device's <strong>advertising ID</strong>, <strong>App Set ID</strong>, <strong>IP address</strong>, <strong>diagnostic information</strong>, and <strong>ad-interaction data</strong>. This is used for advertising, analytics, and fraud prevention. Google's handling of this data is governed by <a href="https://policies.google.com/privacy">Google's Privacy Policy</a> and <a href="https://policies.google.com/technologies/partner-sites">"How Google uses information from sites or apps that use our services"</a>.</p>
-        <p><strong>Your controls.</strong> You can reset or delete your advertising ID, and opt out of ad personalisation, in your device settings under <strong>Settings → Privacy → Ads</strong>. Users in the EEA, UK, and Switzerland are shown a consent prompt (via Google's User Messaging Platform) before personalised ads are served.</p>
-        <p><strong>App-usage analytics (Google Analytics for Firebase).</strong> Ludo SudoX uses Google Analytics for Firebase to understand how the game is used so we can improve it — for example how often the App is opened, which screens are visited, and when a match is started or won. To provide these statistics, the Firebase SDK collects and sends to Google certain data, including your device's <strong>advertising ID</strong>, an <strong>app-instance identifier</strong>, your <strong>approximate location</strong> (derived from your IP address), and <strong>app-interaction data</strong> (screens viewed, session length, and gameplay events). These events never contain your name or anything you type — the App has no accounts and holds no personal details to send. Google handles this data under the same policies linked above, and the advertising-ID controls described under "Your controls" apply to it as well.</p>
-        <p>Aside from Google AdMob and Google Analytics for Firebase, Ludo SudoX includes <strong>no</strong> other third-party analytics, crash-reporting, or tracking services, and we do <strong>not</strong> sell your data.</p>
+        <p><strong>Your controls.</strong> You can reset or delete your advertising ID, and opt out of ad personalisation, in your device settings under <strong>Settings → Privacy → Ads</strong>. Users in the EEA, UK, and Switzerland are shown a consent prompt (via Google's User Messaging Platform) before ads are requested, and can change that choice at any time from <strong>Settings → Privacy &amp; legal → Ad privacy choices</strong> in the App. No ad is requested until the age question at first launch has been answered or skipped.</p>
+        <p><strong>App-usage analytics (Google Analytics for Firebase).</strong> Ludo SudoX uses Google Analytics for Firebase to understand how the game is used so we can improve it — for example how often the App is opened, which screens are visited, and when a match is started or won. To provide these statistics, the Firebase SDK collects and sends to Google an <strong>app-instance identifier</strong>, your <strong>approximate location</strong> (derived from your IP address), and <strong>app-interaction data</strong> (screens viewed, session length, and gameplay events). Analytics is configured <strong>not</strong> to collect your advertising ID and is <strong>never used for advertising</strong>: the advertising-related consent signals are always off. These events never contain your name or anything you type — the App has no accounts and holds no personal details to send. Analytics does not start until the first-launch age question has been answered or skipped, is <strong>switched off entirely</strong> for anyone who tells us they are under 13, and stores analytics data only after Google's consent service has confirmed that no consent is needed where you are — never when that service indicates you are in the EEA, the UK or Switzerland, or when your device's region is set to one of those countries. Google handles this data under the same policies linked above.</p>
+        <p><strong>Feature settings (Firebase Remote Config).</strong> When the App starts, it asks Firebase Remote Config whether certain features are switched on. This uses a <strong>Firebase installation ID</strong> (a random identifier for this installation of the App) and your IP address, and does not build a profile of you or carry any game data.</p>
+        <p>Aside from Google AdMob, Google Analytics for Firebase and Firebase Remote Config, Ludo SudoX includes <strong>no</strong> other third-party analytics, crash-reporting, or tracking services, and we do <strong>not</strong> sell your data.</p>
 
         <h2><span class="n">6.</span>Data Retention and Deletion</h2>
         <p>Because all App data is stored locally on your device, <strong>you are in full control of it</strong>. To delete it, you can:</p>
@@ -192,13 +195,18 @@
 
         <h2><span class="n">7.</span>Children's Privacy</h2>
         <p>Ludo SudoX is <strong>not directed to children under 13</strong>, and we do not knowingly collect personal information from children. Because the App shows ads through Google AdMob, it is intended for a general audience aged 13 and over. If you believe a child has provided personal information, please contact us using the details in Section 12.</p>
-        <p>When you first open the App, we ask for your <strong>month and year of birth</strong>. You may decline. Your answer is stored only on your device, is never transmitted to us or to anyone else, and is used for one purpose: if you tell us you are <strong>under 18</strong>, we ask Google to serve you only non-personalised ads, restricted to content rated suitable for general audiences. We use 18 rather than 13 because India's Digital Personal Data Protection Act treats anyone under 18 as a child and restricts advertising targeted at them. This is a self-declared answer and we do not verify it.</p>
+        <p>When you first open the App, we ask for your <strong>month and year of birth</strong>. You may decline. Your answer is stored only on your device, is never transmitted to us or to anyone else, and is used only to decide how ads and usage statistics treat you:</p>
+        <ul>
+          <li><strong>Under 13:</strong> we tell Google to treat every ad request as <strong>child-directed</strong> (no personalised ads, content rated suitable for general audiences), and we <strong>switch off Google Analytics for Firebase</strong> on your device.</li>
+          <li><strong>13 to 17:</strong> we ask Google to serve you only <strong>non-personalised</strong> ads, restricted to content rated suitable for general audiences. We use 18 rather than 13 because India's Digital Personal Data Protection Act treats anyone under 18 as a child and restricts advertising targeted at them.</li>
+        </ul>
+        <p>No ad is requested and no usage statistic is collected until the question has been answered or skipped. This is a self-declared answer and we do not verify it.</p>
 
         <h2><span class="n">8.</span>Security</h2>
         <p>Because the game stores its data only on your device and sends us none of it, your game data is protected by your device's own security (such as your screen lock and operating-system protections). We do not hold any of your data on servers that could be breached. (Advertising and analytics data is handled by Google, as described in <strong>Section 5</strong>.)</p>
 
         <h2><span class="n">9.</span>Your Privacy Rights</h2>
-        <p>Privacy laws such as the EU/UK GDPR and the California Consumer Privacy Act (CCPA) give you rights over personal data held about you. <strong>We ourselves hold no personal data about you</strong> — the game stores everything on your device, which you can clear at any time (see <strong>Section 6</strong>). Data collected by Google AdMob and Google Analytics for Firebase is controlled by Google; you can exercise your choices over it through your device's ad settings (Section 5) and Google's own privacy controls. If you have questions, contact us using the details below.</p>
+        <p>Privacy laws such as the EU/UK GDPR and the California Consumer Privacy Act (CCPA) give you rights over personal data held about you. <strong>We ourselves hold no personal data about you</strong> — the game stores everything on your device, which you can clear at any time (see <strong>Section 6</strong>). Data collected by Google AdMob and Google Analytics for Firebase is controlled by Google; you can exercise your choices over it through your device's ad settings (Section 5) and Google's own privacy controls. If you have questions or a complaint about how your data is handled, contact us using the details below; we aim to respond within 30 days.</p>
 
         <h2><span class="n">10.</span>International Users</h2>
         <p>The game processes its own data only on your device, wherever you are located. We ourselves receive no data, so we transfer none across borders. Data collected by Google's SDKs (see <strong>Section 5</strong>) may be processed by Google on servers in other countries, in line with Google's Privacy Policy.</p>
@@ -207,7 +215,7 @@
         <p>We may update this Privacy Policy as the App changes. When we do, we will revise the "Last updated" date above and publish the new policy at this same address. Material changes will be reflected before the relevant feature is released. We encourage you to review this policy periodically.</p>
 
         <h2><span class="n">12.</span>Contact Us</h2>
-        <p>If you have any questions about this Privacy Policy or the App, contact:</p>
+        <p>If you have any questions about this Privacy Policy or the App, or a grievance about how your data is handled, contact:</p>
         <div class="contact">
           <div class="name">Kesar Apps</div>
           <div>Email: <a href="mailto:parulpateljnd123@gmail.com">parulpateljnd123@gmail.com</a></div>
@@ -215,7 +223,7 @@
       </main>
 
       <footer>
-        This Privacy Policy is governed by the laws of India. &nbsp;·&nbsp; © 2026 Kesar Apps. All rights reserved.
+        This Privacy Policy is governed by the laws of India. &nbsp;·&nbsp; <a href="terms.html">Terms of Service</a> &nbsp;·&nbsp; © 2026 Kesar Apps. All rights reserved.
       </footer>
     </div>
   </div>
